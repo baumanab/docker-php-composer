@@ -30,9 +30,3 @@ RUN sed -i 's/DocumentRoot.*$/DocumentRoot \
  
 USER www-data
 
-ONBUILD COPY ./composer.json /var/www/html/
-
-ONBUILD RUN composer install && \
-    rm -rf /var/www/html/composer-cache
-
-ONBUILD COPY ./public /var/www/html/public
